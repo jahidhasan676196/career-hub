@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='mt-12'>
-            <div className="navbar bg-base-100">
+        <div className='mt-12 '>
+            <div className="navbar bg-[#7E90FE0D]">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +26,7 @@ const Header = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/statistics'>Statistics</NavLink>
-            <NavLink to='/jobs'>Applied Jobs</NavLink>
+            <NavLink to='/applied'>Applied Jobs</NavLink>
             <NavLink to='/blog'>Blog</NavLink>
       </ul>
     </div>
@@ -36,7 +36,7 @@ const Header = () => {
     <ul className="menu menu-horizontal flex gap-4 text-[#757575] text-base font-medium">
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/statistics'>Statistics</NavLink>
-      <NavLink to='/jobs'>Applied Jobs</NavLink>
+      <NavLink to='/applied'>Applied Jobs</NavLink>
       <NavLink to='/blog'>Blog</NavLink>
     </ul>
   </div>

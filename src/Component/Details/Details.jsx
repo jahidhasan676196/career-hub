@@ -1,5 +1,9 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveLocalStorageAplicationData } from '../Allfunction/All';
+// import { saveLocalStorageData } from '../Utilty/Utility';
 
 const Details = () => {
     const jobs=useLoaderData();
@@ -7,6 +11,11 @@ const Details = () => {
     const intId=parseInt(id);
     const job=jobs.find(job=>job.id===intId);
     const {job_description,job_responsibility,educational_requirements,experiences,job_title,salary,contact_information}=job;
+    const handleAplaynowclick=()=>{
+        toast('Aplication succesfully')
+        // saveLocalStorageData(intId)
+        saveLocalStorageAplicationData(intId)
+    }
 
     return (
         <div>
@@ -32,9 +41,10 @@ const Details = () => {
                 <p>Email : <span className='text-[#757575] text-xl font-medium'>{contact_information.email}</span></p>
                 <p>Address : <span className='text-[#757575] text-xl font-medium'>{contact_information.address}</span></p>
             </div>
-            <button className='btn btn-primary w-full text-white'>Apply Now</button>
+            <button onClick={handleAplaynowclick} className='btn btn-primary w-full text-white'>Apply Now</button>
             </div>
         </div>
+        <ToastContainer />
         </div>
     );
 };
